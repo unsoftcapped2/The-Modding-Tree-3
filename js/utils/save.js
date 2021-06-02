@@ -1809,9 +1809,9 @@ function importSave(imported = undefined, forced = false) {
 		imported = prompt("Paste your save here");
 	try {
 		let z = atob(imported)
-			while(z.indexOf('{"array')!==-1){
-z=z.substring(0,z.indexOf('{"array'))+ExpantaNum(new OmegaNum(z.slice(z.indexOf('{"array'),z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1)).toString()).toString()+z.slice(z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1)
-}
+			while(z.indexOf('{"array')!==-1){z=z.substring(0,z.indexOf('{"array'))
++'"'+ExpantaNum(new OmegaNum(z.slice(z.indexOf('{"array'),z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1)).toString()).toString()
++'"'+z.slice(z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1)}
 		
 		tempPlr = Object.assign(getStartPlayer(), JSON.parse(z));
 		if (tempPlr.versionType != modInfo.id && !forced && !confirm("This save appears to be for a different mod! Are you sure you want to import?")) // Wrong save (use "Forced" to force it to accept.)
