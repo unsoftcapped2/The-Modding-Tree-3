@@ -1810,7 +1810,7 @@ function importSave(imported = undefined, forced = false) {
 	try {
 		let z = atob(imported)
 			while(z.indexOf('{"array')!==-1){z=z.substring(0,z.indexOf('{"array'))
-+'"'+new OmegaNum(z.slice(z.indexOf('{"array'),z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1))
++'"'+JSON.stringify(EN(new OmegaNum(z.slice(z.indexOf('{"array'),z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1)).toString()))
 +'"'+z.slice(z.indexOf('{"array')+z.slice(z.indexOf('{"array')).indexOf("}")+1)}
 		
 		tempPlr = Object.assign(getStartPlayer(), JSON.parse(z));
